@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#1a0a14" />
+  <meta name="description" content="For Jaan — our story, one heartbeat at a time." />
+  <title>For Jaan · Our Forever Starts Here</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Quicksand:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="hearts-bg" aria-hidden="true"></div>
+
+  <header class="hero" id="top">
+    <p class="hero__eyebrow">A little universe, just for you</p>
+    <h1 class="hero__title">Jaan</h1>
+    <p class="hero__subtitle">Every day with you feels like the first page of a story I never want to end.</p>
+    <button type="button" class="btn btn--primary" id="openLetterBtn">Open your letter 💌</button>
+    <p class="hero__hint hint--pulse">Psst… try tapping my name three times. <span class="sr-only">Easter egg.</span></p>
+  </header>
+
+  <!-- Hidden envelope modal -->
+  <div class="modal" id="letterModal" role="dialog" aria-modal="true" aria-labelledby="letterTitle" hidden>
+    <div class="modal__backdrop" data-close-modal></div>
+    <div class="modal__panel">
+      <button type="button" class="modal__close" data-close-modal aria-label="Close letter">&times;</button>
+      <h2 id="letterTitle" class="modal__title">To the love of my life</h2>
+      <div class="letter__body">
+        <p>My dearest <strong>Jaan</strong>,</p>
+        <p>
+          If I could gather every star and name them after the reasons I adore you, the sky would still not be big enough.
+          You walked into my world and suddenly the ordinary became magic — soft laughter, quiet mornings, messy hair,
+          and the way you say my name like it belongs only in your voice.
+        </p>
+        <p>
+          I am not good at pretending I do not need you. I do. I need your kindness, your fire, your patience,
+          the way you make home feel like a person and not a place. With you, I want to be braver, softer, and more honest.
+        </p>
+        <p class="letter__confession">
+          This is my confession, plain and true: <em>I choose you</em> — not just on anniversaries, but in the small
+          in-between moments when no one is watching. I choose your joy, your healing, your dreams, and your rest.
+          I choose building a life where you always feel chosen back.
+        </p>
+        <p>
+          Thank you for being my favourite plot twist, my safest harbour, and my wildest adventure.
+          Happy anniversary, my love. Here is to every chapter we have written — and every one still unwritten.
+        </p>
+        <p class="letter__signoff">Forever yours,<br /><span class="signature">with all my heart</span></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Secret message (name tap x3) -->
+  <div class="toast" id="secretToast" role="status" aria-live="polite" hidden>
+    You found it, clever girl. I love you more than yesterday, less than tomorrow. 💗
+  </div>
+
+  <main>
+    <section class="section section--sparkle" aria-labelledby="timelineHeading">
+      <div class="section__inner">
+        <h2 id="timelineHeading" class="section__title">Our timeline</h2>
+        <p class="section__lede">Swipe the stars — each one holds a memory we made together. (Edit the dates in <code>index.html</code> anytime.)</p>
+        <ol class="timeline" id="timeline">
+          <li class="timeline__item" data-reveal>
+            <button type="button" class="timeline__star" aria-expanded="false" aria-controls="mem-1">
+              <span class="timeline__date">Day we met</span>
+            </button>
+            <div class="timeline__card" id="mem-1" hidden>
+              <h3>The day the world tilted</h3>
+              <p>The first time I saw you, time did something funny — slower, brighter, impossible to forget.</p>
+            </div>
+          </li>
+          <li class="timeline__item" data-reveal>
+            <button type="button" class="timeline__star" aria-expanded="false" aria-controls="mem-2">
+              <span class="timeline__date">First “us” moment</span>
+            </button>
+            <div class="timeline__card" id="mem-2" hidden>
+              <h3>When “you and I” became real</h3>
+              <p>That little moment we both knew — not loud, not dramatic — just true. My favourite kind of magic.</p>
+            </div>
+          </li>
+          <li class="timeline__item" data-reveal>
+            <button type="button" class="timeline__star" aria-expanded="false" aria-controls="mem-3">
+              <span class="timeline__date">First date</span>
+            </button>
+            <div class="timeline__card" id="mem-3" hidden>
+              <h3>Nervous hands, steady heart</h3>
+              <p>I memorised the way you smiled between sentences. I still replay it when I miss you.</p>
+            </div>
+          </li>
+          <li class="timeline__item" data-reveal>
+            <button type="button" class="timeline__star" aria-expanded="false" aria-controls="mem-4">
+              <span class="timeline__date">Inside jokes unlocked</span>
+            </button>
+            <div class="timeline__card" id="mem-4" hidden>
+              <h3>Our language</h3>
+              <p>The glances that mean everything, the texts that make me grin like an idiot in public. Ours.</p>
+            </div>
+          </li>
+          <li class="timeline__item" data-reveal>
+            <button type="button" class="timeline__star" aria-expanded="false" aria-controls="mem-5">
+              <span class="timeline__date">Hard day, soft landing</span>
+            </button>
+            <div class="timeline__card" id="mem-5" hidden>
+              <h3>You held me without fixing</h3>
+              <p>When the world felt heavy, you stayed. That is love I will never take for granted.</p>
+            </div>
+          </li>
+          <li class="timeline__item" data-reveal>
+            <button type="button" class="timeline__star" aria-expanded="false" aria-controls="mem-6">
+              <span class="timeline__date">Today · Anniversary</span>
+            </button>
+            <div class="timeline__card" id="mem-6" hidden>
+              <h3>Still choosing you</h3>
+              <p>Another year of your laugh in my chest, your hand in mine, your name on my lips: <strong>Jaan</strong>.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section section--rose" aria-labelledby="vaultHeading">
+      <div class="section__inner">
+        <h2 id="vaultHeading" class="section__title">The little vault</h2>
+        <p class="section__lede">A password only we would guess…</p>
+        <form class="vault" id="vaultForm" autocomplete="off">
+          <label class="vault__label" for="vaultInput">Whisper the password</label>
+          <div class="vault__row">
+            <input type="text" id="vaultInput" class="vault__input" placeholder="Try: jaan" inputmode="text" />
+            <button type="submit" class="btn btn--ghost">Unlock</button>
+          </div>
+          <p class="vault__hint">Hint: the sweetest name I know (lowercase).</p>
+        </form>
+        <div class="vault__secret" id="vaultSecret" hidden>
+          <div class="vault__sparkles" aria-hidden="true"></div>
+          <p>Surprise! You unlocked a hidden note:</p>
+          <p class="vault__love">
+            If kisses were snowflakes, I would send you a blizzard. If hugs were stars, I would give you the whole sky.
+            You are my favourite notification, my favourite silence, my favourite everything.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="galleryHeading">
+      <div class="section__inner">
+        <h2 id="galleryHeading" class="section__title">Moments (add your photos)</h2>
+        <p class="section__lede">Long-press a polaroid to peek the caption. Tap for a tiny wiggle.</p>
+        <div class="polaroids" id="polaroids">
+          <figure class="polaroid" tabindex="0">
+            <div class="polaroid__frame">
+              <div class="polaroid__img polaroid__img--placeholder" data-placeholder="Us"></div>
+            </div>
+            <figcaption class="polaroid__cap">Replace with your photo in CSS or add &lt;img&gt; — this is your canvas.</figcaption>
+          </figure>
+          <figure class="polaroid" tabindex="0">
+            <div class="polaroid__frame">
+              <div class="polaroid__img polaroid__img--placeholder" data-placeholder="Jaan"></div>
+            </div>
+            <figcaption class="polaroid__cap">My favourite view: you being unapologetically you.</figcaption>
+          </figure>
+          <figure class="polaroid" tabindex="0">
+            <div class="polaroid__frame">
+              <div class="polaroid__img polaroid__img--placeholder" data-placeholder="∞"></div>
+            </div>
+            <figcaption class="polaroid__cap">To infinity, then a little more — because you deserve extra.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--final" aria-labelledby="finalHeading">
+      <div class="section__inner section__inner--narrow">
+        <h2 id="finalHeading" class="section__title">One more surprise</h2>
+        <p class="final__text">Hold the heart below for 2 seconds…</p>
+        <button type="button" class="heart-lock" id="heartLock" aria-label="Hold to reveal love burst">
+          <span class="heart-lock__fill" id="heartFill"></span>
+          <span class="heart-lock__icon" aria-hidden="true">♥</span>
+        </button>
+        <p class="final__tiny" id="heartMessage" hidden>You are loved beyond measure, Jaan. Always.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Made with love · For <span class="footer__name" id="footerName">Jaan</span></p>
+    <p class="footer__egg">Tap the footer moon 5 times… 🌙</p>
+  </footer>
+
+  <button type="button" class="fab" id="confettiFab" aria-label="Send love confetti" title="Love burst">✨</button>
+
+  <canvas id="fxCanvas" class="fx-canvas" aria-hidden="true"></canvas>
+  <script src="script.js"></script>
+</body>
+</html>
